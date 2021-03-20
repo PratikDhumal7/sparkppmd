@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Table - Brand</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="static/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid" style="font-family: 'Abril Fatface', cursive;">
+                    <div class="card shadow">
+                        <div class="card-header py-3" style="background-color: rgb(197, 208, 230);">
+                            <p class="text-primary m-0 font-weight-bold" style="font-size: 61px; ">CUSTOMER LIST<a class="btn btn-primary" role="button" data-bs-hover-animate="flash" style="margin-left: 747px;margin-bottom: 20px;font-size: 20px;background-color: rgb(79,106,183);color: rgb(2,6,41);" href="/">HOME</a></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table dataTable my-0" id="dataTable" style="line: width 2px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-size: 28px;">Customer ID</th>
+                                            <th style="font-size: 28px;">Name</th>
+                                            <th style="font-size: 28px;">Email ID</th>
+                                            <th style="font-size: 28px;">Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in value %}
+                                    
+                                        <form method="POST" action="/prof">
+                                        
+                                        <tr>
+                                            <td name="custid" data-bs-hover-animate="pulse" style="font-size: 22px;">{{item.custid}}</td>
+                                            
+                                            <td name="c_name" data-bs-hover-animate="pulse" style="font-size: 22px;">{{item.c_name}}</td>
+                                            
+                                            <td name="c_email" data-bs-hover-animate="pulse" style="font-size: 22px;">{{item.c_email}}</td>
+                                            
+                                            <td name="c_bal" data-bs-hover-animate="pulse" style="font-size: 22px;">{{item.c_bal}}</td>
+                                        
+                                            <td>
+                                                <input type="hidden" name="custid" value="{{item.custid}}"/>
+                                                <input type="hidden" name="c_name" value="{{item.c_name}}"/>
+                                                <input type="hidden" name="c_email" value="{{item.c_email}}"/>
+                                                <input type="hidden" name="c_bal" value="{{item.c_bal}}"/>
+                                                <input type="submit" value="View Profile" class="btnAddAction" style="color: rgb(0, 0, 0); border: black; background-color: rgb(164, 186, 226); font-size: 20px; height: 45px; width: 140px; border-radius: 6px;"/>
+                                            </td>
+                                        </tr>
+                                        
+                                    </form>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Company Name © 2017</p>
+        </footer>
+    </div>
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>

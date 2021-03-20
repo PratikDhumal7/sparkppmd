@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile - Brand</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="static/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+            style="font-family: 'Abril Fatface', cursive;background-color: rgb(134,54,197);">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="font-size: 30px;color: black;">PPMD BANK</span>
+                    </div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/custlist"><i
+                                class="fas fa-table"></i><span style="font-size: 18px; color: black;">CUSTOMERS
+                                LIST</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper"
+            style="background-image:static\assets\img\mountain_bg;">
+            <div id="content">
+                <div class="container-fluid">
+                    <center>
+                        <h3 class="text-dark mb-4"
+                            style="font-family: 'Abril Fatface', cursive;font-size: 73px;color: rgb(102, 8, 88);">
+                            CUSTOMER PROFILE</h3>
+                    </center>
+                    <div class="row mb-3">
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card text-center shadow mb-3"
+                                        style="width: 832px; margin-left: 182px; margin-top: 57px;">
+                                        <center>
+                                            <div class="card-header py-3" style="margin-top: 20px;">
+                                                <center>
+                                                    <p class="text-primary m-0 font-weight-bold"
+                                                        style="font-family: 'Abril Fatface', cursive;font-size: 50px;">
+                                                        {{value1}}</p>
+                                                </center>
+                                            </div>
+                                        </center>
+                                        <div class="card-body"
+                                            style="width: 757px;font-family: 'Abril Fatface', cursive;">
+                                            <form  method ="POST" action="/transactions">
+                                                <div class="form-row">
+                                                    <div class="col" style="border: black;border-width: 2px;">
+                                                        <div class="form-group"><label for="username"
+                                                                style="font-size: 28px;"><strong>Customer
+                                                                    ID:{{value2}}</strong><br></label><!--<input
+                                                                class="form-control" value="{{value2}}" type="hidden" name="custid">-->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="email"
+                                                                style="font-size: 28px;"><strong>Email:{{value3}}</strong></label><!--<input
+                                                                class="form-control" type="hidden" value="{{value3}}" name="c_email">-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col" style="border: black;">
+
+                                                        <div class="form-group"><label for="balance"
+                                                                style="font-size: 45px;">BALANCE:
+                                                                Rs.{{value4}}<br></label><!--<input class="form-control"
+                                                                type="hidden" name="c_bal">-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="font-size: 13px;">
+                                                    <center><button class="btn btn-primary btn-sm"
+                                                            style="font-size: 20px;margin-left: 47px;font-family: 'Abril Fatface', cursive;height: 52px;margin-top: 20px;"
+                                                            type="button" data-toggle="modal"
+                                                            data-target="#myModal">TRANSFER MONEY</button></center>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="myModal" role="dialog">
+                                                        <div class="modal-dialog">
+
+                                                            <!-- Modal content-->
+                                                            <div class="modal-content" style="height: 400px; width: 600px;">
+                                                                <div class="modal-header"
+                                                                    style="background-color: rgb(189, 204, 231);">
+                                                                        <h4 class="modal-title"
+                                                                            style="font-size: 25px; color: #000; text-transform: capitalize;"><center>Transfer Money From:
+                                                                            {{value1}}</center></h4>
+                                                                </div>
+                                                                <div class="modal-body" style="font-size: 25px;">
+                                                                    <form method="POST" action="/transactions">
+                                                                        <div class="form-group"><input type="hidden" name="c_id" value="{{value2}}"/></div>
+                                                                        <div class="form-group"><input type="hidden" name="c_email" value="{{value3}}"/></div>
+                                                                        <div class="form-group"><input type="hidden" name="c_bal" value="{{value4}}"/></div>
+                                                                        <div class="form-group"><input type="hidden"
+                                                                                name="c_name" value="{{value1}}" /></div>
+                                                                        <div class="form-group"><input type="hidden"
+                                                                                name="c_bal" value="{{value4}}" /></div>
+                                                                        <label for="reciever" style="color: black;">SEND MONEY TO:</label>
+                                                                        <select name="reciever" id="rname" required>
+                                                                            <option style="display:none;"></option>
+                                                                            {% for ni in data %}
+                                                                            <option value="{{ni[1]}}" style="font-size: 20px;">{{ni[1]}}</option>
+                                                                            {% endfor %}
+                                                                        </select>
+                                                                        <div class="form-group" style="width: 300px; margin-left: 150px; margin-top: 25px;"><input
+                                                                                class="form-control" type="text"
+                                                                                name="amount" placeholder="Amount">
+                                                                        </div>
+                                                                        <div class="form-group"><button
+                                                                                class="btn btn-primary btn-block"
+                                                                                type="submit"
+                                                                                style="width: 250px; margin-left: 175px; height: 50px; color: #000;">&nbsp;Transfer
+                                                                                Money</button></div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer" style="height: 150px;">
+                                                                    <button type="button" class="btn btn-default"
+                                                                        data-dismiss="modal"
+                                                                        style="color: black; border: black;">Close</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-basic">
+                <footer>
+                    <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-facebook"></i></a>
+                    </div>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Home</a></li>
+                        <li class="list-inline-item"><a href="#">Services</a></li>
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><a href="#">Terms</a></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="copyright">PPMD © 2021</p>
+                </footer>
+            </div>
+            <script src="static/assets/js/jquery.min.js"></script>
+            <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="static/assets/js/bs-init.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+            <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>
