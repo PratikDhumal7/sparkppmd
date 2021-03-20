@@ -7,10 +7,10 @@ app=Flask(__name__)
 
 app.secret_key = 'SPARK'
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '7snakes'
-app.config['MYSQL_DB'] = 'spark'
+app.config['MYSQL_HOST'] = 'sql6.freemysqlhosting.net'
+app.config['MYSQL_USER'] = 'sql6400328'
+app.config['MYSQL_PASSWORD'] = 'M)(EBKc4Vuj@sskh'
+app.config['MYSQL_DB'] = 'sql6400328'spark'
 
 mysql = MySQL(app)
 
