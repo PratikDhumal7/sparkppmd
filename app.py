@@ -9,7 +9,7 @@ app.secret_key = 'SPARK'
 
 app.config['MYSQL_HOST'] = 'sql6.freemysqlhosting.net'
 app.config['MYSQL_USER'] = 'sql6400328'
-app.config['MYSQL_PASSWORD'] = 'M)(EBKc4Vuj@sskh'
+app.config['MYSQL_PASSWORD'] = 'eRiZVFhYTA'
 app.config['MYSQL_DB'] = 'sql6400328'
 
 mysql = MySQL(app)
